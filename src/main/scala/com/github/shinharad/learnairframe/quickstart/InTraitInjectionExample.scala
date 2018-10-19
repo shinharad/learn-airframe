@@ -12,7 +12,7 @@ trait DatabaseService {
   val db = bind[Database] // Inject Database as a singleton
 }
 
-object InTraitInjection extends App {
+object InTraitInjectionExample extends App {
 
   val d = newDesign
     .bind[String].toInstance("MySQL")

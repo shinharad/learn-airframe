@@ -2,13 +2,9 @@ package com.github.shinharad.learnairframe.quickstart
 
 import wvlet.airframe._
 
-class MyApp(val config: AppConfig)
+object SuppressLifeCycleLoggingExample extends App {
 
-case class AppConfig(appName: String)
-
-object ConstructorInjection extends App {
-
-  val d = newDesign
+  val d = newDesign.noLifeCycleLogging
     .bind[AppConfig].toInstance(AppConfig("Hello Airframe!"))
 
   d.build[MyApp] { app =>
